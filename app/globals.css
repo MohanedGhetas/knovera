@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+}
+
+/* RTL Base Setup */
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: var(--font-cairo), sans-serif;
+  background-color: #FAFAFA;
+  color: #1E293B;
+  transition: background-color 0.3s ease;
+}
+
+/* Premium Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B0936B;
+}
+
+/* Reader Themes */
+.reader-light {
+  background-color: #FFFFFF;
+  color: #1E293B;
+}
+
+.reader-dark {
+  background-color: #0F172A;
+  color: #F1F5F9;
+}
+
+.reader-dark h2,
+.reader-dark h3,
+.reader-dark .text-primary {
+  color: #C5A880 !important;
+}
+
+.reader-sepia {
+  background-color: #FDF6E3;
+  color: #475569;
+}
+
+/* Typography */
+.reader-text {
+  transition: all 0.3s ease;
+}
+
+/* Semantic Search Highlight */
+.semantic-match {
+  background-color: rgba(197, 168, 128, 0.3);
+  border-bottom: 2px solid #C5A880;
+  padding: 0 2px;
+}
+
+/* Tracked Changes */
+ins.tracked-ins {
+  text-decoration: none;
+  background-color: #D1FAE5;
+  color: #065F46;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+del.tracked-del {
+  text-decoration: line-through;
+  background-color: #FEE2E2;
+  color: #991B1B;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+/* OCR Bounding Box */
+.ocr-box {
+  position: absolute;
+  border: 2px solid #DC2626;
+  background-color: rgba(220, 38, 38, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ocr-box:hover,
+.ocr-box.active {
+  border-color: #059669;
+  background-color: rgba(5, 150, 105, 0.2);
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+}
+
+/* Animation Staggers */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.15s;
+}
+
+.stagger-3 {
+  animation-delay: 0.2s;
+}
+
+.stagger-4 {
+  animation-delay: 0.25s;
+}
+
+.stagger-5 {
+  animation-delay: 0.3s;
+}
+
+/* Elegant Hover Elements */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px -5px rgba(15, 30, 54, 0.12);
+}
+
+/* Selection Color */
+::selection {
+  background-color: #C5A880;
+  color: #0F1E36;
+}
+
+/* Input Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #C5A880;
+  box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(to left, #0F1E36, rgba(15, 30, 54, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation Utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hero Pattern Background */
+.hero-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* RTL-aware borders */
+.border-start {
+  border-right-width: 1px;
+  border-left-width: 0;
+}
+
+.border-end {
+  border-left-width: 1px;
+  border-right-width: 0;
+}
+
+/* RTL-aware margins */
+.ms-auto {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.me-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
